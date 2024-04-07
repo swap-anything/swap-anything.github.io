@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="PHOTOSWAP: Personalized Subject Swapping in Images">
+        content="SwapAnything: Enabling Arbitrary Object Swapping in Personalized Image Editing">
   <meta name="keywords" content="Object Swapping, Personalized Editing">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PHOTOSWAP: Personalized Subject Swapping in Images</title>
+  <title>SwapAnything: Enabling Arbitrary Object Swapping in Personalized Image Editing</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -48,7 +48,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">PHOTOSWAP: Personalized Subject Swapping in Images</h1>
+          <h1 class="title is-1 publication-title">SwapAnything: Enabling Arbitrary Object Swapping in Personalized Visual Editing</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://g-jing.github.io">Jing Gu</a><sup>1</sup>,</span>
@@ -56,8 +56,6 @@
               <a href="https://yilinwang.org/">Yilin Wang</a><sup>2</sup>,</span>
             <span class="author-block">
               <a href="http://nxzhao.com/">Nanxuan Zhao</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://tsujuifu.github.io/">Tsu-Jui Fu</a><sup>3</sup>,</span>
             <span class="author-block">
               <a href="https://wxiong.me/">Wei Xiong</a><sup>2</sup>,</span>
             <span class="author-block">
@@ -76,19 +74,18 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of California, Santa Cruz,</span>
             <span class="author-block"><sup>2</sup>Adobe,</span>
-            <span class="author-block"><sup>3</sup>University of California, Santa Barbara</span>
           </div>
           
           <br>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><b style="color:#e08ba0; font-weight:normal"> <b>In NeurIPS 2023</b> </b></span>
+            <span class="author-block"><b style="color:#e08ba0; font-weight:normal"> <b>Under Review</b> </b></span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2305.18286.pdf"
+                <a href="https://arxiv.org/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -97,7 +94,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2305.18286"
+                <a href="https://arxiv.org/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -107,21 +104,12 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/g-jing/photoswap"
+                <a href="https://github.com/g-jing/swapanything"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
-                  </a>
-              </span>
-              <span class="link-block">
-                <a href="https://github.com/eric-ai-lab/photoswap/tree/main/benchmark" target="_blank"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Benchmark, to be released</span>
                   </a>
               </span>
             </div>
@@ -136,11 +124,12 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img id="teaser" width="150%" src="./static/images/teaser-arxiv.png?03222242">
+      <img id="teaser" width="150%" src="./static/images/teaser.png">
       <h2 class="subtitle has-text-centered">
-        <p style="font-family:Times New Roman"><b>Figure 1. Photoswap can effortlessly replace the subject in a source image, which could be either synthetic (first two rows) or real 
-          (bottom row), with a personalized subject specified in reference images, while preserving the original 
-          subject pose and the composition of the source image. </b></p>
+        <p style="font-family:Times New Roman"><b>Figure 1. SwapAnything results on various personalized image swapping tasks. SwapAnything 
+          is adept at precise, arbitrary object replacement in a source image with a personalized reference, 
+          and achieves high-fidelity swapping results without influencing any context pixels. 
+          We demonstrate its general swapping effect in single-object, multi-object, partial-object, and cross-domain swapping tasks. </b></p>
       </h2>
     </div>
   </div>
@@ -155,20 +144,12 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            In an era where images and visual content dominate our digital landscape, the ability to manipulate and
-             personalize these images has become a necessity.
-            Envision seamlessly substituting a tabby cat lounging on a sunlit window sill in a photograph with your
-             own playful puppy, all while preserving the original charm and composition of the image. 
-            We present <b>Photoswap</b>, a novel approach that enables this immersive image editing experience 
-            through personalized subject swapping in existing images.
-            <b>Photoswap</b> first learns the visual concept of the subject from reference images and then swaps it 
-            into the target image using pre-trained diffusion models in a training-free manner. We establish that a 
-            well-conceptualized visual subject can be seamlessly transferred to any image with appropriate self-attention
-             and cross-attention manipulation, maintaining the pose of the swapped subject and the overall coherence of the image. 
-            Comprehensive experiments underscore the efficacy and controllability of <b>Photoswap</b> in personalized 
-            subject swapping. Furthermore, <b>Photoswap</b> significantly outperforms baseline methods in human ratings across
-             subject swapping, background preservation, and overall quality, revealing its vast application potential, from
-              entertainment to professional editing.
+            Effective editing of personal content holds a pivotal role in enabling individuals to express their creativity, weaving captivating narratives within their visual stories, and elevate the overall quality and impact of their visual content. 
+Therefore, in this work, we introduce <b>SwapAnything</b>, a novel framework that can swap any objects in an image with personalized concepts given by the reference, while keeping the context unchanged.
+Compared with existing methods for personalized subject swapping, <b>SwapAnything</b> has three unique advantages: (1) precise control of arbitrary objects and parts rather than the main subject, (2) more faithful preservation of context pixels, (3) better adaptation of the personalized concept to the image.
+First, we propose targeted variable swapping to apply region control over latent feature maps and swap masked variables for faithful context preservation and initial semantic concept swapping. Then, we introduce appearance adaptation, to seamlessly adapt the semantic concept into the original image in terms of target location, shape, style, and content during the image generation process.
+Extensive results on both human and automatic evaluation demonstrate significant improvements of our approach over baseline methods on personalized swapping. 
+Furthermore, <b>SwapAnything</b> shows its precise and faithful swapping abilities across single object, multiple objects, partial object, and cross-domain swapping tasks. 
           </p>
         </div>
       </div>
@@ -182,7 +163,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
-        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Controllable Subject Swapping via Training-free Attention Swapping </h2> 
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> A single frame for different tasks. </h2> 
       </div>
     </div>
 
@@ -190,14 +171,19 @@
           <div class="column is-six-fifths">
             <div class="content has-text-justified">
               <ul>
-                <li>Given several images of a new concept, the diffusion model first learns the concept and converts it into a token. </li>
-                <li>The attention output and attention map in the source image generation process are stored as control source </li>
-                <li>The stored intermediate variables would be transferred to the target image generation process</li>
+                <li> Targetted swapping to keep context pixel perfectly unchaged and to transfer important features. </li>
+                <li> Sophisticated appearance adaptation process to adapt the concept image into the source object.</li>
+                <li>The framework applied to single object swapping, multi-object swapping, partial-object swapping, cross-domain swapping, text-based swapping, and tasks beyond swapping such as object insersion.</li>
               </ul>
             </div>        
-            <img id="model" width="100%" src="./static/images/architecture.png">
+            <img id="model" width="100%" src="./static/images/pipeline.png">
             <h3 class="subtitle has-text-centered">
-              <p style="font-family:Times New Roman"><b>Figure 2. Photoswap pipeline.</b></p>
+              <p style="font-family:Times New Roman"><b>Figure 2. Overview of SwapAnything on swapping a object from a source image ($I_{src}$) into a personalized concept
+                 ($<{*}>$) to get the target image ($I_{target}$).
+                The personalized concept is first converted into textual space to be treated as concept appearance.
+                Meanwhile, the source image is first inverted into initial noise to obtain U-Net variables (including latent feature, attention map, and attention output). 
+                Targeted variable swapping preserves the context pixels in the source image. The appearance adaptation process then utilizes these informative variables to 
+                integrate the concept into the target image.</b></p>
             </h3>   
 
 
@@ -206,113 +192,22 @@
 </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-five-fifths">
-        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Attention Swap Analysis </h2> 
-      </div>
-    </div>
-
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-six-fifths">
-            <div class="content has-text-justified">
-              <ul>
-                <li> With consistent steps, swapping the self-attention output provides superior control over the layout, including the subject's gestures and the background details.</li>
-                <li> Excessive swapping could affect the subject's identity, as the new concept introduced through the text prompt might be overshadowed by the swapping of the attention output or attention map.  </li>
-                <li> Replacing the attention map for an extensive number of steps can result in an image with significant noise, possibly due to a compatibility issue between the attention map and the v vector.</li>
-              </ul>
-            </div>        
-            <img id="model" width="100%" src="./static/images/step_analysis.png">
-            <h3 class="subtitle has-text-centered">
-              <p style="font-family:Times New Roman"><b>Figure 3. Results at different swapping steps. </b></p>
-            </h3>   
-        </div>
-  </div>
-</section>
-
-
-
-<section class="section"   style="background-color:#e4e4f781">
-  <div class="columns is-centered has-text-centered">
-      <div style="width:90%;">
-
-        <!-- Abstract. -->
-        <div style="float:left; width:47.1%; border: 0px solid black;">
-          <h2 class="title is-5">I. Multi-subject swap</h2>
-          <div class="content has-text-justified">
-            Photoswap can disentangle and replace multiple subjects at once.                 
-          </div>  
-
-          <div class="column is-five-fifths">
-              <div class="columns is-centered">
-                <img id="modulated_training" width="105%" src="./static/images/multiple-subjects.png">
-                
-              </div>
-          </div>
-        </div>
-        <!--/ Abstract. -->
-
-        <div style=" float:right; width:47.8%; border: 0px solid black;">
-          <h2 class="title is-5">II. Occluded subject swap</h2>
-          <div class="content has-text-justified">
-            Photoswap can identify the target object while avoiding influencing the non-subject pixels                  
-          </div>  
-
-          <div class="column is-five-fifths">
-              <div class="columns is-centered">
-                <img id="modulated_training" width="97%" src="./static/images/occluded.png">
-                
-              </div>
-          </div>
-        </div>
-
-      </div>  
-    </div>     
-</section>
-
 
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
-        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> More Results </h2> 
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Single Object Swapping Result </h2> 
       </div>
     </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-six-fifths">
-            <div class="content has-text-justified">
-              <p>
-                From everyday objects to cartoon, the diversity in subject swapping tasks has showcased
-                the versatility and robustness of our framework across different contexts.
-              </p>
-            </div>        
-            <img id="model" width="100%" src="./static/images/more-results.png">
-            <h3 class="subtitle has-text-centered">
-              <p style="font-family:Times New Roman"><b>Figure 4. More results at various domains. </b></p>
-            </h3>   
-        </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-five-fifths">
-        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Qualitative Comparison</h2> 
-      </div>
-    </div>
         <div class="columns is-centered has-text-centered">
-          <div class="column is-six-fifths">
-            <div class="content has-text-justified">
-              <p>
-                We set P2P+DreamBooth as a baseline for Photoswap. The former faces challenges in 
-                preserving both the background and the reference subject accurately, while for Photoswap, it is robust to handle various cases.
-              </p>
-            </div>        
-            <img id="model" width="100%" src="./static/images/p2p-compare.png">
+          <div class="column is-six-fifths">  
+            <img id="model" width="100%" src="./static/images/more-single.png">
             <h3 class="subtitle has-text-centered">
-              <p style="font-family:Times New Roman"><b>Figure 5. Comparison with P2P+DreamBooth. </b></p>
+              <p style="font-family:Times New Roman"><b>Figure 3. Comparison on single-object swapping with baselines in their original components. SS means Object Swapping,
+                 BP means Background Preservation,
+                 and OQ means Overall Quality. SG means Object Gesture. Please zoom in for a clear visual result. </b></p>
             </h3>   
         </div>
   </div>
@@ -323,19 +218,109 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
-        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Similarity Control </h2> 
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Multi-object Swapping Result </h2> 
       </div>
     </div>
+
         <div class="columns is-centered has-text-centered">
-          <div class="column is-six-fifths">
-            <div class="content has-text-justified">
-              <p>
-                With proper parameters, we could control the similarity between the generated image and the source image.
-              </p>
-            </div>        
-            <img id="model" width="100%" src="./static/images/identity-control.png">
+          <div class="column is-six-fifths">  
+            <img id="model" width="100%" src="./static/images/multi-objects.png">
             <h3 class="subtitle has-text-centered">
-              <p style="font-family:Times New Roman"><b>Figure 6. Control over similarity. </b></p>
+              <p style="font-family:Times New Roman"></p>
+            </h3>   
+        </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Partial-object Swapping </h2> 
+      </div>
+    </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">  
+            <img id="model" width="100%" src="./static/images/part-subject-swap.png">
+            <h3 class="subtitle has-text-centered">
+              <p style="font-family:Times New Roman"><b>Figure 3. </b></p>
+            </h3>   
+        </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Cross-domain Swapping </h2> 
+      </div>
+    </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">  
+            <img id="model" width="100%" src="./static/images/style-result.png">
+            <h3 class="subtitle has-text-centered">
+              <p style="font-family:Times New Roman"><b>Figure 3. </b></p>
+            </h3>   
+        </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Text-based Swapping </h2> 
+      </div>
+    </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">  
+            <img id="model" width="100%" src="./static/images/text-based.png">
+            <h3 class="subtitle has-text-centered">
+              <p style="font-family:Times New Roman"><b></b></p>
+            </h3>   
+        </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Object Insertion </h2> 
+      </div>
+    </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">  
+            <img id="model" width="100%" src="./static/images/insert.png">
+            <h3 class="subtitle has-text-centered">
+              <p style="font-family:Times New Roman"><b>Figure 3. </b></p>
+            </h3>   
+        </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Human Evaluation </h2> 
+      </div>
+    </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">  
+            <img id="model" width="100%" src="./static/images/human-eval.png">
+            <h3 class="subtitle has-text-centered">
+              <p style="font-family:Times New Roman"><b>
+                We show the human preference between results generated by our method and the baseline methods. SS means Object Swapping, BP means Background Preservation, and OQ means Overall Quality. SG means Object Gesture. For the baseline methods, 
+                PS means Photoswap; MC means MasaCtrl; BP means BlipDiffusion; DE means DreamEdit; CP means CopyPaste.</b></p>
             </h3>   
         </div>
   </div>
@@ -343,19 +328,18 @@
 
 
 
-<section class="section" id="BibTeX">
+
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@misc{gu2023photoswap,
       title={Photoswap: Personalized Subject Swapping in Images}, 
       author={Jing Gu and Yilin Wang and Nanxuan Zhao and Tsu-Jui Fu and Wei Xiong and Qing Liu and Zhifei Zhang and He Zhang and Jianming Zhang and HyunJoon Jung and Xin Eric Wang},
       year={2023},
-      eprint={2305.18286},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+      journal={Advances in Neural Information Processing Systems}
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 
 <footer class="footer">
