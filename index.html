@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="PHOTOSWAP: Personalized Subject Swapping in Images">
+  <meta name="keywords" content="Object Swapping, Personalized Editing">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHOTOSWAP: Personalized Subject Swapping in Images</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="icon" href="./static/images/icon.png">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">PHOTOSWAP: Personalized Subject Swapping in Images</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://g-jing.github.io">Jing Gu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://yilinwang.org/">Yilin Wang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="http://nxzhao.com/">Nanxuan Zhao</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://tsujuifu.github.io/">Tsu-Jui Fu</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://wxiong.me/">Wei Xiong</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://qliu24.github.io/">Qing Liu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://zzutk.github.io/">Zhifei Zhang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/hezhangsprinter/">He Zhang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://cs-people.bu.edu/jmzhang/">Jianming Zhang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://polaris79.wixsite.com/hjung">HyunJoon Jung</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://eric-xw.github.io/">Xin Eric Wang</a><sup>1</sup>,</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of California, Santa Cruz,</span>
+            <span class="author-block"><sup>2</sup>Adobe,</span>
+            <span class="author-block"><sup>3</sup>University of California, Santa Barbara</span>
+          </div>
+          
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><b style="color:#e08ba0; font-weight:normal"> <b>In NeurIPS 2023</b> </b></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2305.18286.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2305.18286"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/g-jing/photoswap"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/eric-ai-lab/photoswap/tree/main/benchmark" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Benchmark, to be released</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" width="150%" src="./static/images/teaser-arxiv.png?03222242">
+      <h2 class="subtitle has-text-centered">
+        <p style="font-family:Times New Roman"><b>Figure 1. Photoswap can effortlessly replace the subject in a source image, which could be either synthetic (first two rows) or real 
+          (bottom row), with a personalized subject specified in reference images, while preserving the original 
+          subject pose and the composition of the source image. </b></p>
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In an era where images and visual content dominate our digital landscape, the ability to manipulate and
+             personalize these images has become a necessity.
+            Envision seamlessly substituting a tabby cat lounging on a sunlit window sill in a photograph with your
+             own playful puppy, all while preserving the original charm and composition of the image. 
+            We present <b>Photoswap</b>, a novel approach that enables this immersive image editing experience 
+            through personalized subject swapping in existing images.
+            <b>Photoswap</b> first learns the visual concept of the subject from reference images and then swaps it 
+            into the target image using pre-trained diffusion models in a training-free manner. We establish that a 
+            well-conceptualized visual subject can be seamlessly transferred to any image with appropriate self-attention
+             and cross-attention manipulation, maintaining the pose of the swapped subject and the overall coherence of the image. 
+            Comprehensive experiments underscore the efficacy and controllability of <b>Photoswap</b> in personalized 
+            subject swapping. Furthermore, <b>Photoswap</b> significantly outperforms baseline methods in human ratings across
+             subject swapping, background preservation, and overall quality, revealing its vast application potential, from
+              entertainment to professional editing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Controllable Subject Swapping via Training-free Attention Swapping </h2> 
+      </div>
+    </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">
+            <div class="content has-text-justified">
+              <ul>
+                <li>Given several images of a new concept, the diffusion model first learns the concept and converts it into a token. </li>
+                <li>The attention output and attention map in the source image generation process are stored as control source </li>
+                <li>The stored intermediate variables would be transferred to the target image generation process</li>
+              </ul>
+            </div>        
+            <img id="model" width="100%" src="./static/images/architecture.png">
+            <h3 class="subtitle has-text-centered">
+              <p style="font-family:Times New Roman"><b>Figure 2. Photoswap pipeline.</b></p>
+            </h3>   
+
+
+        </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Attention Swap Analysis </h2> 
+      </div>
+    </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">
+            <div class="content has-text-justified">
+              <ul>
+                <li> With consistent steps, swapping the self-attention output provides superior control over the layout, including the subject's gestures and the background details.</li>
+                <li> Excessive swapping could affect the subject's identity, as the new concept introduced through the text prompt might be overshadowed by the swapping of the attention output or attention map.  </li>
+                <li> Replacing the attention map for an extensive number of steps can result in an image with significant noise, possibly due to a compatibility issue between the attention map and the v vector.</li>
+              </ul>
+            </div>        
+            <img id="model" width="100%" src="./static/images/step_analysis.png">
+            <h3 class="subtitle has-text-centered">
+              <p style="font-family:Times New Roman"><b>Figure 3. Results at different swapping steps. </b></p>
+            </h3>   
+        </div>
+  </div>
+</section>
+
+
+
+<section class="section"   style="background-color:#e4e4f781">
+  <div class="columns is-centered has-text-centered">
+      <div style="width:90%;">
+
+        <!-- Abstract. -->
+        <div style="float:left; width:47.1%; border: 0px solid black;">
+          <h2 class="title is-5">I. Multi-subject swap</h2>
+          <div class="content has-text-justified">
+            Photoswap can disentangle and replace multiple subjects at once.                 
+          </div>  
+
+          <div class="column is-five-fifths">
+              <div class="columns is-centered">
+                <img id="modulated_training" width="105%" src="./static/images/multiple-subjects.png">
+                
+              </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+
+        <div style=" float:right; width:47.8%; border: 0px solid black;">
+          <h2 class="title is-5">II. Occluded subject swap</h2>
+          <div class="content has-text-justified">
+            Photoswap can identify the target object while avoiding influencing the non-subject pixels                  
+          </div>  
+
+          <div class="column is-five-fifths">
+              <div class="columns is-centered">
+                <img id="modulated_training" width="97%" src="./static/images/occluded.png">
+                
+              </div>
+          </div>
+        </div>
+
+      </div>  
+    </div>     
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> More Results </h2> 
+      </div>
+    </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">
+            <div class="content has-text-justified">
+              <p>
+                From everyday objects to cartoon, the diversity in subject swapping tasks has showcased
+                the versatility and robustness of our framework across different contexts.
+              </p>
+            </div>        
+            <img id="model" width="100%" src="./static/images/more-results.png">
+            <h3 class="subtitle has-text-centered">
+              <p style="font-family:Times New Roman"><b>Figure 4. More results at various domains. </b></p>
+            </h3>   
+        </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Qualitative Comparison</h2> 
+      </div>
+    </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">
+            <div class="content has-text-justified">
+              <p>
+                We set P2P+DreamBooth as a baseline for Photoswap. The former faces challenges in 
+                preserving both the background and the reference subject accurately, while for Photoswap, it is robust to handle various cases.
+              </p>
+            </div>        
+            <img id="model" width="100%" src="./static/images/p2p-compare.png">
+            <h3 class="subtitle has-text-centered">
+              <p style="font-family:Times New Roman"><b>Figure 5. Comparison with P2P+DreamBooth. </b></p>
+            </h3>   
+        </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="5%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Similarity Control </h2> 
+      </div>
+    </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">
+            <div class="content has-text-justified">
+              <p>
+                With proper parameters, we could control the similarity between the generated image and the source image.
+              </p>
+            </div>        
+            <img id="model" width="100%" src="./static/images/identity-control.png">
+            <h3 class="subtitle has-text-centered">
+              <p style="font-family:Times New Roman"><b>Figure 6. Control over similarity. </b></p>
+            </h3>   
+        </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{gu2023photoswap,
+      title={Photoswap: Personalized Subject Swapping in Images}, 
+      author={Jing Gu and Yilin Wang and Nanxuan Zhao and Tsu-Jui Fu and Wei Xiong and Qing Liu and Zhifei Zhang and He Zhang and Jianming Zhang and HyunJoon Jung and Xin Eric Wang},
+      year={2023},
+      eprint={2305.18286},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from <a rel="license"
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a rel="license"
+            href="https://gligen.github.io/">GLIGEN</a>, licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
